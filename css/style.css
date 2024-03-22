@@ -1,0 +1,152 @@
+@keyframes mymove{
+   from{width:25px; opacity:0;}
+   to{width: 475px; opacity:1;}
+}
+
+#logo{
+   width: 475px;
+   animation: mymove 3s;
+}
+
+/* 
+Edit the body element to use the Poppins font (using Google fonts) with serif as a backup.  It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1.
+ */
+
+ body {
+    font-family: "Poppins", sans-serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+  }
+
+  /* Edit the css for the header tag (all instances) to use flex to match our example.
+ */
+
+ header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ /* Edit the css for the nav_links class to use flex to match our example. Do not modify the list items or the links - modify the nav_links class to use flex.  */
+ .nav_links{
+    display: flex;
+    flex-direction: column;
+ }
+
+ a:visited{
+   color: #0000ee;
+ }
+
+
+
+ .card>header{
+   background-color: #288088;
+   border: solid 2px #45ADAD;
+   padding: 20px 0px;
+   border-radius: 50px 50px 0px 0px;
+ }
+
+ div.card{
+   border-radius: 50px 50px 0px 0px;
+ }
+
+ .card{
+   flex-basis: 450px;
+ }
+
+
+ .pricing{
+   display: flex;
+   flex-flow: row wrap;    
+   justify-content: center;
+ }
+
+ .gallery img{
+   border: solid 10px #50C7C7;
+   margin: 10px;
+   width: 300px;
+ }
+
+ .gallery{
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: center;
+ }
+
+
+
+ @media screen and (min-width:900px){
+   header{ 
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+   }
+
+.nav_links{
+      flex-direction: row;
+   }
+
+.card{
+   flex-basis: 275px;
+}
+
+.pricing{  
+   align-items: center;
+}
+body>header{
+   position: sticky;
+   top: 0;
+}
+
+ }
+
+ @media all and (prefers-reduced-motion:reduce){
+   #logo{
+      width: 475px;
+      animation: none;
+   }
+ 
+ }
+
+ @media print and (orientation: portrait){
+   body{
+      font-family: Arial Arial, Helvetica;
+      background-image: none;
+   }
+
+   nav{
+      width: 100%;
+   }
+   .nav_links{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+   }
+
+.pricing{
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: center;
+   align-items: flex-end;
+}
+.card{
+   flex-basis: 325px;
+   border: solid 2px #45ADDD;
+ }
+
+ #gallery{
+   display: none;
+ }
+ .gallery{
+   display: none;
+ }
+
+ .card ul li:nth-child(2n)::after{
+   content: "👍";
+ }
+
+}
+
+
+
+ 
+
