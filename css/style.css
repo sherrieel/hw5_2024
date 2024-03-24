@@ -1,0 +1,186 @@
+/* make the logo animated from 25px to 475px and opacity from 0 to 1, which is kind of like transparent to not transparent */
+@keyframes mymove{
+   from{width:25px; opacity:0;}
+   to{width: 475px; opacity:1;}
+}
+
+/* set the width of logo 475px and make the animation 3 second */
+#logo{
+   width: 475px;
+   animation: mymove 3s;
+}
+
+/* 
+Edit the body element to use the Poppins font (using Google fonts) with serif as a backup.  It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1.
+ */
+/* set all content in body font as Poppins, if it doesn't works, use sans-serif; set the background image as the url image;
+   set the background color as #f1f1f1 */
+ body {
+    font-family: "Poppins", sans-serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+  }
+
+  /* Edit the css for the header tag (all instances) to use flex to match our example.
+ */
+/* put header in column and set it in the center */
+ header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ /* Edit the css for the nav_links class to use flex to match our example. Do not modify the list items or the links - modify the nav_links class to use flex.  */
+ /* set all nav_links in column so they will display vertically */
+ .nav_links{
+    display: flex;
+    flex-direction: column;
+ }
+
+ /* make all links in nav bar have constant color even after they've been clicked/visited*/
+ a:visited{
+   color: #0000ee;
+ }
+
+
+/* give the header that is direct children of card class($20,$35,50) a background color
+   set the border around it solid and 2px width lake blue color
+   the padding on top and buttom are 20px
+   and the border radius on top left and right corner with 50px curved(rounded) */
+ .card>header{
+   background-color: #288088;
+   border: solid 2px #45ADAD;
+   padding: 20px 0px;
+   border-radius: 50px 50px 0px 0px;
+ }
+/* make the top left and right corner of white background 50px curved, so it will match with the top lake blue background  */
+ div.card{
+   border-radius: 50px 50px 0px 0px;
+ }
+/* give the card class div 450px so that everything in the div will be limited in this size */
+ .card{
+   flex-basis: 450px;
+ }
+
+/* set up flex for pricing class, and the row wrap will fold everything when they couldn't fit in one row(in this case 
+   they will be in column, and centered them on the page */
+ .pricing{
+   display: flex;
+   flex-flow: row wrap;    
+   justify-content: center;
+ }
+
+ /* give each image in gallery a solid 10px border with light lake blue, margin on 4 sides are 10px 
+   and the max width of each img is 300px*/
+ .gallery img{
+   border: solid 10px #50C7C7;
+   margin: 10px;
+   width: 300px;
+ }
+
+ /* set up flex for everything in gallery and and the row wrap will fold everything when they couldn't fit in one row, 
+   and centered them on the page*/
+ .gallery{
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: center;
+ }
+
+
+/* set up what layout is when screen is 900px or above */
+ @media screen and (min-width:900px){
+/* set up flex for all headers and and the row wrap will fold everything when they couldn't fit in one row, 
+   and add space in bewtween */
+   header{ 
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+   }
+
+
+/* put all nav links in a row */
+.nav_links{
+      flex-direction: row;
+   }
+
+/* set card class div within 275px*/
+.card{
+   flex-basis: 275px;
+}
+
+/* align all cards in the center of the page */
+.pricing{  
+   align-items: center;
+}
+
+/* set up sticky header on the top*/
+body>header{
+   position: sticky;
+   top: 0;
+}
+
+ }
+
+ /* when people set up reduced motion mode, the motion of logo won't show */
+ @media all and (prefers-reduced-motion:reduce){
+   #logo{
+      width: 475px;
+      animation: none;
+   }
+ 
+ }
+
+ /* set up rules for printed portrait mode */
+ @media print and (orientation: portrait){
+   /* set body font as  Arial, if it doesn't available, use Helvetica
+      remove the background image*/
+   body{
+      font-family: Arial, Helvetica;
+      background-image: none;
+   }
+   /* set the nav section width as 100%, it will take up the whole row */
+   nav{
+      width: 100%;
+   }
+   /* put all nav links in a row and put space around */
+   .nav_links{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+   }
+/* set up flex for everything in gallery and and the row wrap will fold everything when they couldn't fit in one row, 
+   and centered them on the page, also all cards will align buttom */
+.pricing{
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: center;
+   align-items: flex-end;
+}
+
+/* set card class items(card) in 325px and give 2px solid border*/
+.card{
+   flex-basis: 325px;
+   border: solid 2px #45ADDD;
+ }
+
+ /* make gallery header disappear */
+ #gallery{
+   display: none;
+ }
+
+
+ /* make everything in gallery disappear */
+ .gallery{
+   display: none;
+ }
+
+ /* add 👍 to the end of second child of card class ul */
+ .card ul li:nth-child(2n)::after{
+   content: "👍";
+ }
+
+}
+
+
+
+ 
+
